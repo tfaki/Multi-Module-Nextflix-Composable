@@ -20,7 +20,7 @@ class NowPlayingDataSource @Inject constructor(private val nowPlayingUseCase: No
         val nextPage = params.key ?: 1
         val movieResponse = nowPlayingUseCase(nextPage)
         return LoadResult.Page(
-            data = movieResponse.movies,
+            data = movieResponse.results,
             prevKey =
             if (nextPage == 1) null
             else nextPage - 1,

@@ -17,7 +17,7 @@ object RepoModule {
 
     @Provides
     @Singleton
-    fun provideMovieGateway(
+    fun provideNextflixGateway(
         nextflixRepository: NextflixRepository
     ): NextflixGateway = nextflixRepository
 }

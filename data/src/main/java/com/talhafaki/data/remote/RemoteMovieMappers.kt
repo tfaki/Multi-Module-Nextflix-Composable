@@ -8,7 +8,7 @@ import com.talhafaki.domain.entity.*
  * Created by tfakioglu on 14.December.2021
  */
 fun MoviesResponse.asMovies() = Movies(
-    movies = results.map { it.asMovie() },
+    results = results.map { it.asMovie() },
     currentPage = 1,
     totalPages = totalPages,
 )

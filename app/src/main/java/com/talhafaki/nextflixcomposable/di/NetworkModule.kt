@@ -2,6 +2,7 @@ package com.talhafaki.nextflixcomposable.di
 
 import com.talhafaki.data.remote.NextflixService
 import com.talhafaki.domain.util.Constants.TMDB_BASE_URL
+import com.talhafaki.nextflixcomposable.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,23 +21,23 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-//    @Singleton
-//    @Provides
-//    fun provideAuthInterceptor(): Interceptor {
-//        return Interceptor { chain: Interceptor.Chain ->
-//            val initialRequest = chain.request()
-//
-//            val newUrl = initialRequest.url.newBuilder()
-//                .addQueryParameter("api_key", API_KEY)
-//                .build()
-//
-//            val newRequest = initialRequest.newBuilder()
-//                .url(newUrl)
-//                .build()
-//
-//            chain.proceed(newRequest)
-//        }
-//    }
+    @Singleton
+    @Provides
+    fun provideAuthInterceptor(): Interceptor {
+        return Interceptor { chain: Interceptor.Chain ->
+            val initialRequest = chain.request()
+
+            val newUrl = initialRequest.url.newBuilder()
+                .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
+                .build()
+
+            val newRequest = initialRequest.newBuilder()
+                .url(newUrl)
+                .build()
+
+            chain.proceed(newRequest)
+        }
+    }
 
     @Singleton
     @Provides
@@ -51,8 +52,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(
+        authInterceptor: Interceptor,
+        loggingInterceptor: HttpLoggingInterceptor
+    ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(authInterceptor)
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 

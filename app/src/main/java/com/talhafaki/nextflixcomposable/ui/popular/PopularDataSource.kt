@@ -20,7 +20,7 @@ class PopularDataSource @Inject constructor(private val popularUseCase: PopularU
         val nextPage = params.key ?: 1
         val response = popularUseCase(page = nextPage)
         return LoadResult.Page(
-            data = response.movies,
+            data = response.results,
             prevKey =
             if (nextPage == 1) null
             else nextPage - 1,

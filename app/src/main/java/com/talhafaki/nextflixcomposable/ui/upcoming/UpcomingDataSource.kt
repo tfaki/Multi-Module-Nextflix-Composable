@@ -19,7 +19,7 @@ class UpcomingDataSource @Inject constructor(private val upcomingUseCase: Upcomi
         val nextPage = params.key ?: 1
         val movieResponse = upcomingUseCase(nextPage)
         return LoadResult.Page(
-            data = movieResponse.movies,
+            data = movieResponse.results,
             prevKey =
             if (nextPage == 1) null
             else nextPage - 1,
