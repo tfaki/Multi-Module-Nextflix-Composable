@@ -12,6 +12,8 @@ The modules are as follow:
 
 * data: Data Access Layer
 
+* common: A View Items Layer
+
 * nowplaying: A Screen Layer
 
 * popular: A Screen Layer
@@ -20,7 +22,7 @@ The modules are as follow:
 
 * buildSrc: Includes Versions of Dependecies 
 
-## Requirement
+## --- Requirement ---
 You should add api key to gradle.properties before build app.
 
 ## Screenshots
