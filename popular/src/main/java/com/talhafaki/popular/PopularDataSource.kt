@@ -1,9 +1,7 @@
-package com.talhafaki.nextflixcomposable.ui.popular
+package com.talhafaki.popular
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.talhafaki.data.remote.NextflixService
-import com.talhafaki.data.remote.response.Movie
 import com.talhafaki.domain.entity.NetworkMovie
 import com.talhafaki.domain.usecase.PopularUseCase
 import javax.inject.Inject

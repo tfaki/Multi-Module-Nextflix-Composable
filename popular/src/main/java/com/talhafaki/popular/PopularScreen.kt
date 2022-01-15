@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.popular
+package com.talhafaki.popular
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background

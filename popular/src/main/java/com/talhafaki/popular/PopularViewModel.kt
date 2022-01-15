@@ -1,9 +1,8 @@
-package com.talhafaki.nextflixcomposable.ui.popular
+package com.talhafaki.popular
 
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
 import com.talhafaki.domain.entity.NetworkMovie
-import com.talhafaki.nextflixcomposable.ui.popular.PopularRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
