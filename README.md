@@ -2,15 +2,21 @@
 
 [![](https://img.shields.io/badge/Android%20Arsenal-Multi--Module--Nextflix--Composable-green.svg?style=flat)](https://android-arsenal.com/details/1/8264)
 
-A Clean Architecture App to show use of  multi-module-architecture in a Jetpack Compose
+A Clean Architecture App to show use of  multi-module-architecture in a Jetpack Compose.
 
-This app is a PoC to showcase the use of  multi-module-architecture in a Jetpack Compose. The modules are as follow:
+The modules are as follow:
 
 * app: Presentation Layer
 
 * domain: Business Logic Layer
 
 * data: Data Access Layer
+
+* nowplaying: A Screen Layer
+
+* popular: A Screen Layer
+
+* upcoming: A Screen Layer
 
 * buildSrc: Includes Versions of Dependecies 
 
@@ -38,10 +44,17 @@ This app is a PoC to showcase the use of  multi-module-architecture in a Jetpack
 ## MAD (Modern Android Development) Scorecard
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/summary.png)
 
+##TODOs
+
+* Unit Tests
+* Implementation of static code analysis tool(ktlint etc.) 
+* Better UIs
+* Add More Screens
+
 ## Screens
-* [Click here for Now Playing Screen](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/app/src/main/java/com/talhafaki/nextflixcomposable/ui/nowplaying/NowPlayingScreen.kt)
-* [Click here for Popular Screen](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/app/src/main/java/com/talhafaki/nextflixcomposable/ui/popular/PopularScreen.kt)
-* [Click here for Upcoming Screen](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/app/src/main/java/com/talhafaki/nextflixcomposable/ui/upcoming/UpcomingScreen.kt)
+* [Click here for Now Playing Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/nowplaying/src/main/java/com/talhafaki/nowplaying/NowPlayingScreen.kt)
+* [Click here for Popular Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/popular/src/main/java/com/talhafaki/popular/PopularScreen.kt)
+* [Click here for Upcoming Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/upcoming/src/main/java/com/talhafaki/upcoming/UpcomingScreen.kt)
 
 ## Follow me here:
 https://linktr.ee/talhafaki
