@@ -20,6 +20,9 @@ The modules are as follow:
 
 * buildSrc: Includes Versions of Dependecies 
 
+## Requirement
+You should add api key to gradle.properties before build app.
+
 ## Screenshots
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/now_playing_screen.png)
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/popular_screen.png)
