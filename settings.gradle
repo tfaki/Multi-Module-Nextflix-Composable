@@ -10,3 +10,4 @@ rootProject.name = "Nextflix-Composable"
 include ':app'
 include ':domain'
 include ':data'
+include ':common'

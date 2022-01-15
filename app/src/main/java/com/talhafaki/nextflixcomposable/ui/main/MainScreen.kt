@@ -12,11 +12,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.talhafaki.common.theme.SpeechRed
 import com.talhafaki.nextflixcomposable.R
-import com.talhafaki.nextflixcomposable.ui.common.NavigationItem
+import com.talhafaki.common.items.NavigationItem
 import com.talhafaki.nextflixcomposable.ui.nowplaying.NowPlayingScreen
 import com.talhafaki.nextflixcomposable.ui.popular.PopularScreen
-import com.talhafaki.nextflixcomposable.ui.theme.SpeechRed
 import com.talhafaki.nextflixcomposable.ui.upcoming.UpcomingScreen
 
 /**

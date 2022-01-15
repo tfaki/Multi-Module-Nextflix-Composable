@@ -1,6 +1,6 @@
-package com.talhafaki.nextflixcomposable.ui.common
+package com.talhafaki.common.items
 
-import com.talhafaki.nextflixcomposable.R
+import com.talhafaki.common.R
 
 /**
  * Created by tfakioglu on 12.December.2021

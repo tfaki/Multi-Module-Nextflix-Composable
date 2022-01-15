@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.theme
+package com.talhafaki.common.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

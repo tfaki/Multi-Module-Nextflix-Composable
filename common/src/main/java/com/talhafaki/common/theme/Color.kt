@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.theme
+package com.talhafaki.common.theme
 
 import androidx.compose.ui.graphics.Color
 

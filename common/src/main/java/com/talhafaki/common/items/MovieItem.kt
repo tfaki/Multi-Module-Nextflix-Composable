@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.common
+package com.talhafaki.common.items
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -15,8 +15,6 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
-import com.talhafaki.data.remote.NextflixService
-import com.talhafaki.data.remote.response.Movie
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**

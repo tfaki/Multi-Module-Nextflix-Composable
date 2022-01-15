@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.theme
+package com.talhafaki.common.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

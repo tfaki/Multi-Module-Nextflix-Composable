@@ -9,9 +9,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.talhafaki.common.items.MovieItem
+import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.domain.entity.NetworkMovie
-import com.talhafaki.nextflixcomposable.ui.common.MovieItem
-import com.talhafaki.nextflixcomposable.ui.theme.NextflixComposableTheme
 
 /**
  * Created by tfakioglu on 12.December.2021
