@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'org.jetbrains.kotlin.kapt'
     id 'dagger.hilt.android.plugin'
+    id 'maven-publish'
 }
 
 android {
@@ -13,7 +14,7 @@ android {
         minSdk Sdk.min
         targetSdk Sdk.target
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -105,4 +106,16 @@ dependencies {
 
     // Google
     implementation "com.google.android.material:material:${Google.material}"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            aar(MavenPublication) {
+                groupId = 'com.github.TalhaFaki'
+                artifactId = 'multimodulenextflixcomposable'
+                version = '1.0.0'
+            }
+        }
+    }
 }
