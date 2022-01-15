@@ -17,7 +17,7 @@ import com.talhafaki.nextflixcomposable.R
 import com.talhafaki.common.items.NavigationItem
 import com.talhafaki.nextflixcomposable.ui.nowplaying.NowPlayingScreen
 import com.talhafaki.nextflixcomposable.ui.popular.PopularScreen
-import com.talhafaki.nextflixcomposable.ui.upcoming.UpcomingScreen
+import com.talhafaki.upcoming.UpcomingScreen
 
 /**
  * Created by tfakioglu on 12.December.2021

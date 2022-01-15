@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.upcoming
+package com.talhafaki.upcoming
 
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData

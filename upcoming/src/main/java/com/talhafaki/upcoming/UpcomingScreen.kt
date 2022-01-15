@@ -1,4 +1,4 @@
-package com.talhafaki.nextflixcomposable.ui.upcoming
+package com.talhafaki.upcoming
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
