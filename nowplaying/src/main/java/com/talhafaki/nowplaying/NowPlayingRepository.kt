@@ -1,11 +1,10 @@
-package com.talhafaki.nextflixcomposable.ui.nowplaying
+package com.talhafaki.nowplaying
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.talhafaki.domain.entity.NetworkMovie
 import com.talhafaki.domain.usecase.NowPlayingUseCase
-import com.talhafaki.nextflixcomposable.ui.nowplaying.NowPlayingDataSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

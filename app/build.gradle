@@ -60,6 +60,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":common"))
     implementation(project(":upcoming"))
+    implementation(project(":nowplaying"))
 
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Kotlin.coroutines}"

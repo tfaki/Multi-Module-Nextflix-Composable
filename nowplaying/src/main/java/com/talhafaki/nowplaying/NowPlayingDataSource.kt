@@ -1,9 +1,7 @@
-package com.talhafaki.nextflixcomposable.ui.nowplaying
+package com.talhafaki.nowplaying
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.talhafaki.data.remote.NextflixService
-import com.talhafaki.data.remote.response.Movie
 import com.talhafaki.domain.entity.NetworkMovie
 import com.talhafaki.domain.usecase.NowPlayingUseCase
 import javax.inject.Inject
