@@ -44,7 +44,7 @@ The modules are as follow:
 ## MAD (Modern Android Development) Scorecard
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/summary.png)
 
-##TODOs
+## TODOs
 
 * Unit Tests
 * Implementation of static code analysis tool(ktlint etc.) 
