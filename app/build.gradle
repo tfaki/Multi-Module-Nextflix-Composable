@@ -58,6 +58,10 @@ dependencies {
 
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":common"))
+    implementation(project(":upcoming"))
+    implementation(project(":nowplaying"))
+    implementation(project(":popular"))
 
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Kotlin.coroutines}"
@@ -98,9 +102,6 @@ dependencies {
     kaptAndroidTest "com.google.dagger:hilt-compiler:${Google.hilt}"
     androidTestImplementation "androidx.test.ext:junit:${Testing.junitExt}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${Testing.espresso}"
-
-    // Coil
-    implementation "io.coil-kt:coil-compose:${CoilKt.coil}"
 
     // Google
     implementation "com.google.android.material:material:${Google.material}"
