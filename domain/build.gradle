@@ -10,4 +10,6 @@ java {
 dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}"
     implementation "javax.inject:javax.inject:${Jvm.inject}"
+    
+    implementation "com.squareup.retrofit2:retrofit:${Network.retrofit}"
 }

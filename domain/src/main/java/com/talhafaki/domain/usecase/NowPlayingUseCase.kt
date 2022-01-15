@@ -2,6 +2,7 @@ package com.talhafaki.domain.usecase
 
 import com.talhafaki.domain.entity.Movies
 import com.talhafaki.domain.gateway.NextflixGateway
+import retrofit2.Response
 import javax.inject.Inject
 
 /**
@@ -11,7 +12,7 @@ class NowPlayingUseCase  @Inject constructor(
     private val nextflixGateway: NextflixGateway,
 ) {
 
-    suspend operator fun invoke(page: Int): Movies {
+    suspend operator fun invoke(page: Int): Response<Movies> {
         return nextflixGateway.getNowPlayingMovies(page)
     }
 }

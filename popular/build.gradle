@@ -55,4 +55,15 @@ dependencies {
 
     // Paging
     implementation "androidx.paging:paging-compose:${AndroidX.pagingCompose}"
+
+    // Sweet Toast
+    implementation 'com.github.TalhaFaki:ComposableSweetToast:1.0.0'
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie-compose:4.2.0'
+
+    // Swipe Refresh
+    implementation 'com.google.accompanist:accompanist-swiperefresh:0.21.0-beta'
+
+    implementation "com.squareup.retrofit2:retrofit:${Network.retrofit}"
 }

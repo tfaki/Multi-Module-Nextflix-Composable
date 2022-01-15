@@ -43,7 +43,11 @@ dependencies {
 
     implementation "androidx.compose.ui:ui:${AndroidX.compose}"
     implementation "androidx.compose.material:material:${AndroidX.compose}"
+    implementation "androidx.compose.ui:ui-tooling:${AndroidX.compose}"
 
     // Coil
     implementation "io.coil-kt:coil-compose:${CoilKt.coil}"
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie-compose:4.2.0'
 }

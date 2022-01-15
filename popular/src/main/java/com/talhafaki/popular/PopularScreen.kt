@@ -9,10 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.GridItem
+import com.talhafaki.common.loading.ShowLoading
 import com.talhafaki.common.theme.NextflixComposableTheme
+import com.talhafaki.composablesweettoast.util.SweetToastUtil.SweetError
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**
@@ -37,6 +40,31 @@ fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
         items(movieList.itemCount) { index ->
             movieList[index]?.let {
                 GridItem(movie = it)
+            }
+        }
+
+        movieList.apply {
+            val error = when {
+                loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
+                loadState.append is LoadState.Error -> loadState.append as LoadState.Error
+                loadState.refresh is LoadState.Error -> loadState.refresh as LoadState.Error
+                else -> null
+            }
+
+            val loading = when {
+                loadState.prepend is LoadState.Loading -> loadState.prepend as LoadState.Loading
+                loadState.append is LoadState.Loading -> loadState.append as LoadState.Loading
+                loadState.refresh is LoadState.Loading -> loadState.refresh as LoadState.Loading
+                else -> null
+            }
+
+            if (loading != null) {
+                item { ShowLoading() }
+            }
+
+            if (error != null) {
+                //TODO: add error handler
+                item { SweetError(message = error.error.localizedMessage ?: "Error") }
             }
         }
     }
