@@ -21,9 +21,9 @@ class PopularDataSource @Inject constructor(private val popularUseCase: PopularU
             val nextPage = params.key ?: 1
             val response = popularUseCase(page = nextPage)
 
-//            if (!response.isSuccessful) {
-//                LoadResult.Error(IllegalStateException())
-//            }
+            if (response.body()?.results.isNullOrEmpty()) {
+                return LoadResult.Error(throw Exception("Something went wrong"))
+            }
 
             val list = response.body()?.results ?: emptyList()
 

@@ -20,8 +20,8 @@ class NowPlayingDataSource @Inject constructor(private val nowPlayingUseCase: No
             val nextPage = params.key ?: 1
             val movieResponse = nowPlayingUseCase(nextPage)
 
-            if (!movieResponse.isSuccessful){
-                return LoadResult.Error(IllegalStateException())
+            if (movieResponse.body()?.results.isNullOrEmpty()){
+                return LoadResult.Error(throw Exception("Something went wrong"))
             }
 
             val list = movieResponse.body()?.results ?: emptyList()

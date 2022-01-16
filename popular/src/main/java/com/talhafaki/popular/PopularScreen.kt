@@ -36,7 +36,7 @@ fun PopularScreen() {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
-    LazyVerticalGrid(cells = GridCells.Fixed(2)) {
+    LazyVerticalGrid(cells = GridCells.Fixed(2), content = {
         items(movieList.itemCount) { index ->
             movieList[index]?.let {
                 GridItem(movie = it)
@@ -67,5 +67,5 @@ fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
                 item { SweetError(message = error.error.localizedMessage ?: "Error") }
             }
         }
-    }
+    })
 }

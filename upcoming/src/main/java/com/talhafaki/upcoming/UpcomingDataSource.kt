@@ -19,8 +19,8 @@ class UpcomingDataSource @Inject constructor(private val upcomingUseCase: Upcomi
             val nextPage = params.key ?: 1
             val movieResponse = upcomingUseCase(nextPage)
 
-            if (!movieResponse.isSuccessful) {
-                return LoadResult.Error(IllegalStateException())
+            if (movieResponse.body()?.results.isNullOrEmpty()){
+                return LoadResult.Error(throw Exception("Something went wrong"))
             }
 
             val list = movieResponse.body()?.results ?: emptyList()

@@ -11,6 +11,7 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.MovieItem
+import com.talhafaki.common.loading.ShowLoading
 import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil
 import com.talhafaki.domain.entity.NetworkMovie
@@ -40,18 +41,30 @@ fun UpcomingList(movieList: LazyPagingItems<NetworkMovie>) {
         }
 
         movieList.apply {
-            when {
-                loadState.refresh is LoadState.Error -> {
-                    val e = movieList.loadState.refresh as LoadState.Error
-                    item {
-                        SweetToastUtil.SweetError(message = e.error.localizedMessage ?: "Error")
-                    }
-                }
-                loadState.append is LoadState.Error -> {
-                    val e = movieList.loadState.append as LoadState.Error
-                    item {
-                        SweetToastUtil.SweetError(message = e.error.localizedMessage ?: "Error")
-                    }
+            val error = when {
+                loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
+                loadState.append is LoadState.Error -> loadState.append as LoadState.Error
+                loadState.refresh is LoadState.Error -> loadState.refresh as LoadState.Error
+                else -> null
+            }
+
+            val loading = when {
+                loadState.prepend is LoadState.Loading -> loadState.prepend as LoadState.Loading
+                loadState.append is LoadState.Loading -> loadState.append as LoadState.Loading
+                loadState.refresh is LoadState.Loading -> loadState.refresh as LoadState.Loading
+                else -> null
+            }
+
+            if (loading != null) {
+                item { ShowLoading() }
+            }
+
+            if (error != null) {
+                //TODO: add error handler
+                item {
+                    SweetToastUtil.SweetError(
+                        message = error.error.localizedMessage ?: "Error"
+                    )
                 }
             }
         }
