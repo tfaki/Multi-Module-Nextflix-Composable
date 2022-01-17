@@ -9,13 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import coil.size.Scale
-import coil.transform.CircleCropTransformation
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**
@@ -32,27 +32,37 @@ fun GridItem(posterPath: String, title: String, desc: String) {
         modifier = Modifier.fillMaxSize()
     ) {
         Card(
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
             shape = RoundedCornerShape(6.dp),
             elevation = 4.dp,
         ) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.fillMaxWidth().padding(0.dp, 8.dp, 0.dp, 0.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(0.dp, 8.dp, 0.dp, 0.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Image(
                         modifier = Modifier
-                            .size(120.dp),
-                        alignment = Alignment.Center,
+                            .padding(4.dp)
+                            .size(160.dp)
+                            .clip(RoundedCornerShape(8.dp)),
                         painter = rememberImagePainter(
-                            data = posterPath,
-                            builder = {
-                                scale(Scale.FILL)
-                                transformations(CircleCropTransformation())
-                            }
+                            data = posterPath
                         ),
+                        contentScale = ContentScale.Crop,
                         contentDescription = ""
                     )
                 }
-                Column(modifier = Modifier.fillMaxWidth().padding(top = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Text(
                         text = title,
                         style = MaterialTheme.typography.body2,

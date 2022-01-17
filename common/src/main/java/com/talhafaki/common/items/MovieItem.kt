@@ -9,12 +9,12 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import coil.size.Scale
-import coil.transform.CircleCropTransformation
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**
@@ -41,14 +41,13 @@ fun MovieItem(movie: NetworkMovie) {
 
                 Image(
                     modifier = Modifier
-                        .size(120.dp),
+                        .padding(4.dp)
+                        .size(100.dp)
+                        .clip(RoundedCornerShape(8.dp)),
                     painter = rememberImagePainter(
-                        data = movie.posterUrl,
-                        builder = {
-                            scale(Scale.FILL)
-                            transformations(CircleCropTransformation())
-                        }
+                        data = movie.posterUrl
                     ),
+                    contentScale = ContentScale.Crop,
                     contentDescription = ""
                 )
 
