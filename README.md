@@ -33,6 +33,13 @@ You should add api key to gradle.properties before build app.
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/popular_screen.png)
 ![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/upcoming_screen.png)
 
+## Shimmer Effects
+<p>
+ <img align="left" src="grid_shimmer.gif" width="300" height="550"/>
+ <img align="center" src="row_shimmer.gif" width="300" height="550"/>
+</p>
+
+
 ## Teck Stack
 
 * Multi-Module-Architecture
