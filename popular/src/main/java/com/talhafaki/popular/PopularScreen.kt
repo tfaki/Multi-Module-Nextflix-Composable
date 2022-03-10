@@ -2,7 +2,6 @@ package com.talhafaki.popular
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.runtime.Composable
@@ -13,7 +12,6 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.GridItem
-import com.talhafaki.common.loading.ShowLoading
 import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil.SweetError
 import com.talhafaki.domain.entity.NetworkMovie
@@ -23,23 +21,27 @@ import com.talhafaki.domain.entity.NetworkMovie
  */
 @Composable
 fun PopularScreen() {
-
     val viewModel = hiltViewModel<PopularViewModel>()
 
     NextflixComposableTheme(darkTheme = true) {
-        Column(Modifier.background(Color.DarkGray)) {
-            PopularList(movieList = viewModel.getPopularList().collectAsLazyPagingItems())
-        }
+        PopularList(movieList = viewModel.getPopularList().collectAsLazyPagingItems())
     }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
-    LazyVerticalGrid(cells = GridCells.Fixed(2), content = {
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(2),
+        modifier = Modifier.background(color = Color.DarkGray),
+        content = {
         items(movieList.itemCount) { index ->
-            movieList[index]?.let {
-                GridItem(movie = it)
+            movieList[index]?.let { movie ->
+                GridItem(
+                    posterPath = movie.posterUrl,
+                    title = movie.title,
+                    desc = movie.overview
+                )
             }
         }
 
@@ -59,7 +61,7 @@ fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
             }
 
             if (loading != null) {
-                item { ShowLoading() }
+                //TODO: add loading
             }
 
             if (error != null) {

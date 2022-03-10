@@ -1,72 +1,78 @@
 package com.talhafaki.common.items
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement.Top
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.talhafaki.domain.entity.NetworkMovie
+import com.talhafaki.common.theme.Typography
 
 /**
  * Created by tfakioglu on 12.December.2021
  */
 @Composable
-fun MovieItem(movie: NetworkMovie) {
+fun MovieItem(posterPath: String, title: String, desc: String) {
 
-    val backgroundColor = MaterialTheme.colors.background
-    Card(
+    Box(
         modifier = Modifier
-            .padding(8.dp, 4.dp)
+            .padding(horizontal = 8.dp, vertical = 4.dp)
             .fillMaxWidth()
-            .height(110.dp),
-        shape = RoundedCornerShape(8.dp), elevation = 4.dp
+            .height(110.dp)
+            .clip(RoundedCornerShape(8.dp))
+            .background(color = MaterialTheme.colors.background)
     ) {
-        Surface(color = backgroundColor) {
+        Row(
+            Modifier
+                .padding(all = 4.dp)
+                .fillMaxSize()
+        ) {
 
-            Row(
-                Modifier
+            Image(
+                modifier = Modifier
                     .padding(4.dp)
-                    .fillMaxSize()
+                    .size(100.dp)
+                    .clip(RoundedCornerShape(8.dp)),
+                painter = rememberImagePainter(
+                    data = posterPath
+                ),
+                contentScale = ContentScale.Crop,
+                contentDescription = ""
+            )
+
+            Column(
+                verticalArrangement = Top,
+                modifier = Modifier
+                    .padding(vertical = 4.dp, horizontal = 12.dp)
+                    .fillMaxHeight()
             ) {
-
-                Image(
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .size(100.dp)
-                        .clip(RoundedCornerShape(8.dp)),
-                    painter = rememberImagePainter(
-                        data = movie.posterUrl
-                    ),
-                    contentScale = ContentScale.Crop,
-                    contentDescription = ""
-                )
-
-                Column(
-                    verticalArrangement = Arrangement.Center,
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .fillMaxHeight()
-                ) {
-                    Text(
-                        text = movie.title,
+                Text(
+                    text = title,
+                    style = Typography.body1.copy(
+                        color = Color.White,
                         fontWeight = FontWeight.Bold
                     )
-                    Text(
-                        text = movie.overview,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis
+                )
+                Text(
+                    text = desc,
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                    style = Typography.body2.copy(
+                        color = Color.White
                     )
-                }
+                )
             }
         }
     }

@@ -1,7 +1,6 @@
 package com.talhafaki.nowplaying
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -11,7 +10,6 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.MovieItem
-import com.talhafaki.common.loading.ShowLoading
 import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil.SweetError
 import com.talhafaki.domain.entity.NetworkMovie
@@ -24,18 +22,20 @@ fun NowPlayingScreen() {
     val viewModel = hiltViewModel<NowPlayingViewModel>()
 
     NextflixComposableTheme(darkTheme = true) {
-        Column(Modifier.background(Color.DarkGray)) {
-            NowPlayingList(movieList = viewModel.nowPlayingList().collectAsLazyPagingItems())
-        }
+        NowPlayingList(movieList = viewModel.nowPlayingList().collectAsLazyPagingItems())
     }
 }
 
 @Composable
 fun NowPlayingList(movieList: LazyPagingItems<NetworkMovie>) {
-    LazyColumn {
+    LazyColumn(modifier = Modifier.background(color = Color.DarkGray)) {
         items(movieList.itemCount) { index ->
-            movieList[index]?.let {
-                MovieItem(movie = it)
+            movieList[index]?.let { movie ->
+                MovieItem(
+                    posterPath = movie.posterUrl,
+                    title = movie.title,
+                    desc = movie.overview
+                )
             }
         }
 
@@ -55,7 +55,7 @@ fun NowPlayingList(movieList: LazyPagingItems<NetworkMovie>) {
             }
 
             if (loading != null) {
-                item { ShowLoading() }
+                //TODO: add loading
             }
 
             if (error != null) {
