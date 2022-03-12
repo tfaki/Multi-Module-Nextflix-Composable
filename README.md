@@ -40,7 +40,7 @@ You should add api key to gradle.properties before build app.
 </p>
 
 
-## Teck Stack
+## Tech Stack
 
 * Multi-Module-Architecture
 * Kotlin
