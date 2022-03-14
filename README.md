@@ -64,8 +64,9 @@ You should add api key to gradle.properties before build app.
 * Unit Tests
 * Implementation of static code analysis tool(ktlint etc.) 
 * Better UIs
-* Add More Screens
+* Add More Screens (Details etc.)
 * Error Handling
+* Favorite Icon
 
 ## Screens
 * [Click here for Now Playing Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/nowplaying/src/main/java/com/talhafaki/nowplaying/NowPlayingScreen.kt)
