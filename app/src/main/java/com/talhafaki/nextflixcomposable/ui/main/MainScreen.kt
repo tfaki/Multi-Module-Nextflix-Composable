@@ -54,7 +54,7 @@ fun SettingUpBottomNavigationBarAndCollapsing() {
         object : NestedScrollConnection {
             override fun onPreScroll(
                 available: Offset,
-                source: NestedScrollSource
+                source: NestedScrollSource,
             ): Offset {
                 val delta = available.y
                 val newOffset = bottomBarOffsetHeightPx.value + delta
@@ -83,7 +83,7 @@ fun SettingUpBottomNavigationBarAndCollapsing() {
 
 @Composable
 private fun MainScreenNavigationConfigurations(
-    navController: NavHostController
+    navController: NavHostController,
 ) {
     NavHost(navController, startDestination = NavigationItem.NowPlaying.route) {
         composable(NavigationItem.NowPlaying.route) {
@@ -137,6 +137,21 @@ fun BottomNavigationBar(modifier: Modifier, navController: NavController) {
                                 saveState = true
                             }
                         }
+
+                        /**
+                         * As per https://developer.android.com/jetpack/compose/navigation#bottom-nav
+                         * By using the saveState and restoreState flags,
+                         * the state and back stack of that item is correctly saved
+                         * and restored as you swap between bottom navigation items.
+                         */
+
+                        // Avoid multiple copies of the same destination when
+                        // reselecting the same item
+                        launchSingleTop = true
+
+                        // Restore state when reselecting a previously selected item
+                        restoreState = true
+
                     }
                 }
             )

@@ -1,10 +1,9 @@
 package com.talhafaki.nowplaying
 
 import androidx.lifecycle.ViewModel
-import androidx.paging.PagingData
-import com.talhafaki.domain.entity.NetworkMovie
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /**
@@ -12,10 +11,9 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class NowPlayingViewModel @Inject constructor(
-    private val nowPlayingRepository: NowPlayingRepository
+    private val nowPlayingRepository: NowPlayingRepository,
 ) : ViewModel() {
 
-    fun nowPlayingList(): Flow<PagingData<NetworkMovie>> {
-        return nowPlayingRepository.nowPlaying()
-    }
+    val nowPlayingList = nowPlayingRepository.nowPlaying().cachedIn(viewModelScope)
+
 }

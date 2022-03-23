@@ -1,10 +1,9 @@
 package com.talhafaki.popular
 
 import androidx.lifecycle.ViewModel
-import androidx.paging.PagingData
-import com.talhafaki.domain.entity.NetworkMovie
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /**
@@ -12,10 +11,8 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class PopularViewModel @Inject constructor(
-    private val popularRepository: PopularRepository
+    private val popularRepository: PopularRepository,
 ) : ViewModel() {
 
-    fun getPopularList(): Flow<PagingData<NetworkMovie>> {
-        return popularRepository.popular()
-    }
+    val popularList = popularRepository.popular().cachedIn(viewModelScope)
 }

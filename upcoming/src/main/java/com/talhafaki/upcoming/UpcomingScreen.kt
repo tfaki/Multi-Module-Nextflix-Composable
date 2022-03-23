@@ -23,8 +23,10 @@ import com.talhafaki.domain.entity.NetworkMovie
 fun UpcomingScreen() {
     val viewModel = hiltViewModel<UpcomingViewModel>()
 
+    val upcomingList = viewModel.upcomingList.collectAsLazyPagingItems()
+
     NextflixComposableTheme(darkTheme = true) {
-        UpcomingList(movieList = viewModel.upcomingList().collectAsLazyPagingItems())
+        UpcomingList(movieList = upcomingList)
     }
 }
 
