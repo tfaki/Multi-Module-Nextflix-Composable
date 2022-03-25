@@ -23,8 +23,10 @@ import com.talhafaki.domain.entity.NetworkMovie
 fun NowPlayingScreen() {
     val viewModel = hiltViewModel<NowPlayingViewModel>()
 
+    val nowPlayingList = viewModel.nowPlayingList.collectAsLazyPagingItems()
+
     NextflixComposableTheme(darkTheme = true) {
-        NowPlayingList(movieList = viewModel.nowPlayingList().collectAsLazyPagingItems())
+        NowPlayingList(movieList = nowPlayingList)
     }
 }
 

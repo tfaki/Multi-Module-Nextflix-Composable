@@ -25,8 +25,10 @@ import com.talhafaki.domain.entity.NetworkMovie
 fun PopularScreen() {
     val viewModel = hiltViewModel<PopularViewModel>()
 
+    val popularList = viewModel.popularList.collectAsLazyPagingItems()
+
     NextflixComposableTheme(darkTheme = true) {
-        PopularList(movieList = viewModel.getPopularList().collectAsLazyPagingItems())
+        PopularList(movieList = popularList)
     }
 }
 
