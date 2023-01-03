@@ -46,7 +46,7 @@ dependencies {
     implementation(project(":common"))
 
     implementation "androidx.compose.ui:ui:${AndroidX.compose}"
-    implementation "androidx.compose.material:material:${AndroidX.compose}"
+    implementation "androidx.compose.material:material:1.3.1"
 
     // Hilt
     implementation "com.google.dagger:hilt-android:${Google.hilt}"
