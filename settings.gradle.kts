@@ -3,15 +3,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { setUrl("https://jitpack.io") }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Nextflix-Composable"
-include ':app'
-include ':domain'
-include ':data'
-include ':common'
-include ':upcoming'
-include ':nowplaying'
-include ':popular'
+include(":app")
+include(":domain")
+include(":data")
+include(":common")
+include(":upcoming")
+include(":nowplaying")
+include(":popular")
