@@ -8,8 +8,8 @@ java {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}")
-    implementation("javax.inject:javax.inject:${Jvm.inject}")
+    implementation(Libs.coroutineCore)
+    implementation(Libs.inject)
     
-    implementation("com.squareup.retrofit2:retrofit:${Network.retrofit}")
+    implementation(Libs.retrofit)
 }

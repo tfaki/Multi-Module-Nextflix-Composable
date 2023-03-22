@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk =  Sdk.compile
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = Sdk.min
-        targetSdk = Sdk.target
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,8 +33,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Kotlin.compilerExtension
-        kotlinCompilerVersion = Kotlin.compiler
+        kotlinCompilerExtensionVersion = Versions.compilerExtension
     }
     packagingOptions {
         resources.excludes.add("META-INF/*")
@@ -44,13 +43,13 @@ android {
 dependencies {
     implementation(project(":domain"))
 
-    implementation("androidx.compose.ui:ui:${AndroidX.compose}")
-    implementation("androidx.compose.material:material:1.3.1")
-    implementation("androidx.compose.ui:ui-tooling:${AndroidX.compose}")
+    implementation(Libs.composeUi)
+    implementation(Libs.composeMaterial)
+    implementation(Libs.composeUiTooling)
 
     // Coil
-    implementation("io.coil-kt:coil-compose:${CoilKt.coil}")
+    implementation(Libs.coil)
 
     // Lottie
-    implementation("com.airbnb.android:lottie-compose:4.2.2")
+    implementation(Libs.lottieCompose)
 }

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk = Sdk.compile
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = Sdk.min
-        targetSdk = Sdk.target
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,26 +39,24 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Kotlin.coroutines}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}")
-    implementation("javax.inject:javax.inject:${Jvm.inject}")
+    implementation(Libs.coroutineAndroid)
+    implementation(Libs.coroutineCore)
+    implementation(Libs.inject)
 
     // Networking
-    implementation("com.squareup.retrofit2:retrofit:${Network.retrofit}")
-    implementation("com.squareup.retrofit2:converter-gson:${Network.retrofit}")
-    implementation("com.squareup.retrofit2:converter-scalars:${Network.retrofit}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${Network.okhttpLogging}")
+    implementation(Libs.retrofit)
+    implementation(Libs.converterGson)
+    implementation(Libs.converterScalars)
+    implementation(Libs.okhttpLogging)
 
     // Testing
-    testImplementation("junit:junit:${Testing.junit}")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${Kotlin.coroutines}")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Kotlin.coroutines}")
-    testImplementation("androidx.test.ext:junit:${Testing.junitExt}")
-    testImplementation("com.google.dagger:hilt-android-testing:${Google.hilt}")
-    kaptTest("com.google.dagger:hilt-compiler:${Google.hilt}")
+    testImplementation(Libs.junit)
+    testImplementation(Libs.coroutinesTest)
+    testImplementation(Libs.extJunit)
+    testImplementation(Libs.hiltTesting)
+    kaptTest(Libs.hiltCompiler)
 
-    kaptAndroidTest("com.google.dagger:hilt-compiler:${Google.hilt}")
-    androidTestImplementation("com.google.dagger:hilt-android-testing:${Google.hilt}")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${Kotlin.coroutines}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${Testing.espresso}")
+    kaptAndroidTest(Libs.hiltCompiler)
+    implementation(Libs.hiltTesting)
+    implementation(Libs.espresso)
 }
