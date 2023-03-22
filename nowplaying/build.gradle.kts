@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdk =  Sdk.compile
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        minSdk = Sdk.min
-        targetSdk = Sdk.target
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,8 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Kotlin.compilerExtension
-        kotlinCompilerVersion = Kotlin.compiler
+        kotlinCompilerExtensionVersion = Versions.compilerExtension
     }
 }
 
@@ -45,22 +44,22 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":common"))
 
-    implementation("androidx.compose.ui:ui:${AndroidX.compose}")
-    implementation("androidx.compose.material:material:1.3.1")
+    implementation(Libs.composeUi)
+    implementation(Libs.composeMaterial)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:${Google.hilt}")
-    kapt("com.google.dagger:hilt-compiler:${Google.hilt}")
-    implementation("androidx.hilt:hilt-navigation-compose:${AndroidX.hiltNavigationCompose}")
+    implementation(Libs.hilt)
+    kapt(Libs.hiltCompiler)
+    implementation(Libs.hiltNavigationCompose)
 
     // Paging
-    implementation("androidx.paging:paging-compose:${AndroidX.pagingCompose}")
+    implementation(Libs.pagingCompose)
 
     // Sweet Toast
-    implementation("com.github.TalhaFaki:ComposableSweetToast:1.0.0")
+    implementation(Libs.sweetToast)
 
     // Lottie
-    implementation("com.airbnb.android:lottie-compose:4.2.0")
+    implementation(Libs.lottieCompose)
 
-    implementation("com.squareup.retrofit2:retrofit:${Network.retrofit}")
+    implementation(Libs.retrofit)
 }

@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk = Sdk.compile
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
         applicationId = "com.talhafaki.nextflixcomposable"
-        minSdk = Sdk.min
-        targetSdk = Sdk.target
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
         versionCode = 1
         versionName = "1.0.0"
 
@@ -42,8 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Kotlin.compilerExtension
-        kotlinCompilerVersion = Kotlin.compiler
+        kotlinCompilerExtensionVersion = Versions.compilerExtension
     }
     packagingOptions {
         resources.excludes.add("META-INF/*")
@@ -60,44 +59,41 @@ dependencies {
     implementation(project(":popular"))
 
     // Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Kotlin.coroutines}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Kotlin.coroutines}")
+    implementation(Libs.coroutineAndroid)
+    implementation(Libs.coroutineCore)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:${Google.hilt}")
-    kapt("com.google.dagger:hilt-compiler:${Google.hilt}")
+    implementation(Libs.hilt)
+    kapt(Libs.hiltCompiler)
 
     // AndroidX
-    implementation("androidx.core:core-ktx:${AndroidX.core}")
-    implementation("androidx.appcompat:appcompat:${AndroidX.appcompat}")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:${AndroidX.lifecycle}")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:${AndroidX.lifecycleCompose}")
-    implementation("androidx.compose.ui:ui:${AndroidX.compose}")
-    implementation("androidx.compose.material:material:1.3.1")
-    implementation("androidx.compose.ui:ui-tooling:${AndroidX.compose}")
-    implementation("androidx.compose.material:material-icons-core:${AndroidX.compose}")
-    implementation("androidx.compose.material:material-icons-extended:1.4.0-alpha03")
-    implementation("androidx.compose.runtime:runtime-livedata:${AndroidX.compose}")
-    implementation("androidx.activity:activity-compose:${AndroidX.activityCompose}")
-    implementation("androidx.navigation:navigation-compose:${AndroidX.navigationCompose}")
-    implementation("androidx.hilt:hilt-navigation-compose:${AndroidX.hiltNavigationCompose}")
-    implementation("androidx.paging:paging-compose:${AndroidX.pagingCompose}")
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.lifecycle)
+    implementation(Libs.lifecycleViewmodel)
+    implementation(Libs.composeUi)
+    implementation(Libs.composeMaterial)
+    implementation(Libs.composeUiTooling)
+    implementation(Libs.materialIconsCore)
+    //implementation(Libs.materialIconsExtended)
+    implementation(Libs.runtimeLiveData)
+    implementation(Libs.activityCompose)
+    implementation(Libs.navigationCompose)
+    implementation(Libs.hiltNavigationCompose)
+    implementation(Libs.pagingCompose)
 
     // Networking
-    implementation("com.squareup.retrofit2:retrofit:${Network.retrofit}")
-    implementation("com.squareup.retrofit2:converter-gson:${Network.retrofit}")
-    implementation("com.squareup.retrofit2:converter-scalars:${Network.retrofit}")
-    implementation("com.squareup.okhttp3:logging-interceptor:${Network.okhttpLogging}")
+    implementation(Libs.retrofit)
+    implementation(Libs.converterGson)
+    implementation(Libs.converterScalars)
+    implementation(Libs.okhttpLogging)
 
     // Testing
-    testImplementation("junit:junit:${Testing.junit}")
-    testImplementation("com.google.dagger:hilt-android-testing:${Google.hilt}")
-    kaptTest("com.google.dagger:hilt-compiler:${Google.hilt}")
-    implementation("com.google.dagger:hilt-android-testing:${Google.hilt}")
-    kaptAndroidTest("com.google.dagger:hilt-compiler:${Google.hilt}")
-    implementation("androidx.test.ext:junit:${Testing.junitExt}")
-    implementation("androidx.test.espresso:espresso-core:${Testing.espresso}")
+    testImplementation(Libs.junit)
+    testImplementation(Libs.hiltTesting)
+    implementation(Libs.extJunit)
+    implementation(Libs.espresso)
 
     // Google
-    implementation("com.google.android.material:material:${Google.material}")
+    implementation(Libs.material)
 }
