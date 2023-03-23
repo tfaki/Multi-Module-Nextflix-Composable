@@ -1,6 +1,5 @@
 package com.talhafaki.popular
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -14,27 +13,22 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.GridItem
 import com.talhafaki.common.loading.ShimmerAnimation
-import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil.SweetError
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**
  * Created by tfakioglu on 12.December.2021
  */
-@Composable
-fun PopularScreen() {
-    val viewModel = hiltViewModel<PopularViewModel>()
 
+@Composable
+fun PopularRoute(viewModel: PopularViewModel = hiltViewModel()) {
     val popularList = viewModel.popularList.collectAsLazyPagingItems()
 
-    NextflixComposableTheme(darkTheme = true) {
-        PopularList(movieList = popularList)
-    }
+    PopularScreen(movieList = popularList)
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
+internal fun PopularScreen(movieList: LazyPagingItems<NetworkMovie>) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier.background(color = Color.DarkGray),
@@ -81,5 +75,6 @@ fun PopularList(movieList: LazyPagingItems<NetworkMovie>) {
                     item { SweetError(message = error.error.localizedMessage ?: "Error") }
                 }
             }
-        })
+        }
+    )
 }

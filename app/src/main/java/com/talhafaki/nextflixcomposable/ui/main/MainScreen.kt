@@ -14,15 +14,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.talhafaki.common.items.NavigationItem
 import com.talhafaki.common.theme.SpeechRed
 import com.talhafaki.nextflixcomposable.R
-import com.talhafaki.nowplaying.NowPlayingScreen
-import com.talhafaki.popular.PopularScreen
-import com.talhafaki.upcoming.UpcomingScreen
+import com.talhafaki.nowplaying.navigation.nowPlayingScreen
+import com.talhafaki.popular.navigation.popularScreen
+import com.talhafaki.upcoming.navigation.upcomingScreen
 
 /**
  * Created by tfakioglu on 12.December.2021
@@ -55,16 +54,13 @@ fun SettingUpBottomNavigationBarAndCollapsing() {
 private fun MainScreenNavigationConfigurations(
     navController: NavHostController,
 ) {
-    NavHost(navController, startDestination = NavigationItem.NowPlaying.route) {
-        composable(NavigationItem.NowPlaying.route) {
-            NowPlayingScreen()
-        }
-        composable(NavigationItem.Popular.route) {
-            PopularScreen()
-        }
-        composable(NavigationItem.Upcoming.route) {
-            UpcomingScreen()
-        }
+    NavHost(
+        navController = navController,
+        startDestination = NavigationItem.NowPlaying.route
+    ) {
+        nowPlayingScreen()
+        popularScreen()
+        upcomingScreen()
     }
 }
 

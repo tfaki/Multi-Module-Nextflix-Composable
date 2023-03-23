@@ -1,7 +1,6 @@
 package com.talhafaki.domain.gateway
 
 import com.talhafaki.domain.entity.Movies
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 /**

@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NextflixComposableTheme {
+            NextflixComposableTheme(darkTheme = true) {
                 Surface(color = MaterialTheme.colors.background) {
                     MainScreen()
                 }

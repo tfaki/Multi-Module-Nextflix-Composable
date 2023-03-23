@@ -12,26 +12,21 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.MovieItem
 import com.talhafaki.common.loading.ShimmerAnimation
-import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil.SweetError
 import com.talhafaki.domain.entity.NetworkMovie
 
 /**
  * Created by tfakioglu on 12.December.2021
  */
+
 @Composable
-fun NowPlayingScreen() {
-    val viewModel = hiltViewModel<NowPlayingViewModel>()
-
+fun NowPlayingRoute(viewModel: NowPlayingViewModel = hiltViewModel()) {
     val nowPlayingList = viewModel.nowPlayingList.collectAsLazyPagingItems()
-
-    NextflixComposableTheme(darkTheme = true) {
-        NowPlayingList(movieList = nowPlayingList)
-    }
+    NowPlayingScreen(movieList = nowPlayingList)
 }
 
 @Composable
-fun NowPlayingList(movieList: LazyPagingItems<NetworkMovie>) {
+fun NowPlayingScreen(movieList: LazyPagingItems<NetworkMovie>) {
     LazyColumn(modifier = Modifier.background(color = Color.DarkGray)) {
         items(movieList.itemCount) { index ->
             movieList[index]?.let { movie ->
