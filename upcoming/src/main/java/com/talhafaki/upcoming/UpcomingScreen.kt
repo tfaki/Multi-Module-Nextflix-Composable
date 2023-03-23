@@ -19,19 +19,14 @@ import com.talhafaki.domain.entity.NetworkMovie
 /**
  * Created by tfakioglu on 12.December.2021
  */
-@Composable
-fun UpcomingScreen() {
-    val viewModel = hiltViewModel<UpcomingViewModel>()
 
+@Composable
+fun UpcomingRoute(viewModel: UpcomingViewModel = hiltViewModel()) {
     val upcomingList = viewModel.upcomingList.collectAsLazyPagingItems()
-
-    NextflixComposableTheme(darkTheme = true) {
-        UpcomingList(movieList = upcomingList)
-    }
+    UpcomingScreen(movieList = upcomingList)
 }
-
 @Composable
-fun UpcomingList(movieList: LazyPagingItems<NetworkMovie>) {
+internal fun UpcomingScreen(movieList: LazyPagingItems<NetworkMovie>) {
     LazyColumn(
         modifier = Modifier
             .background(color = Color.DarkGray)
