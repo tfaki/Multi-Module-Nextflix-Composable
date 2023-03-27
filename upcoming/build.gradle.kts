@@ -44,22 +44,22 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":common"))
 
-    implementation(Libs.composeUi)
-    implementation(Libs.composeMaterial)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material)
 
     // Hilt
-    implementation(Libs.hilt)
-    kapt(Libs.hiltCompiler)
-    implementation(Libs.hiltNavigationCompose)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
+    implementation(libs.compose.hilt.navigation)
 
     // Paging
-    implementation(Libs.pagingCompose)
+    implementation(libs.compose.paging)
 
     // Sweet Toast
-    implementation(Libs.sweetToast)
+    implementation(libs.sweet.toast)
 
     // Lottie
-    implementation(Libs.lottieCompose)
+    implementation(libs.compose.lottie)
 
-    implementation(Libs.retrofit)
+    implementation(libs.retrofit)
 }

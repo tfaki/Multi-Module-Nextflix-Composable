@@ -43,13 +43,13 @@ android {
 dependencies {
     implementation(project(":domain"))
 
-    implementation(Libs.composeUi)
-    implementation(Libs.composeMaterial)
-    implementation(Libs.composeUiTooling)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material)
+    implementation(libs.compose.ui.tooling)
 
     // Coil
-    implementation(Libs.coil)
+    implementation(libs.coil)
 
     // Lottie
-    implementation(Libs.lottieCompose)
+    implementation(libs.compose.lottie)
 }

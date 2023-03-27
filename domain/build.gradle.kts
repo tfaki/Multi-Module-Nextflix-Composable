@@ -8,8 +8,8 @@ java {
 }
 
 dependencies {
-    implementation(Libs.coroutineCore)
-    implementation(Libs.inject)
+    implementation(libs.coroutines.core)
+    implementation(libs.inject)
     
-    implementation(Libs.retrofit)
+    implementation(libs.retrofit)
 }
