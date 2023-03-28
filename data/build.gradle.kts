@@ -39,24 +39,24 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(Libs.coroutineAndroid)
-    implementation(Libs.coroutineCore)
-    implementation(Libs.inject)
+    implementation(libs.coroutines.android)
+    implementation(libs.coroutines.core)
+    implementation(libs.inject)
 
     // Networking
-    implementation(Libs.retrofit)
-    implementation(Libs.converterGson)
-    implementation(Libs.converterScalars)
-    implementation(Libs.okhttpLogging)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.scalars)
+    implementation(libs.okhttp.logging)
 
     // Testing
-    testImplementation(Libs.junit)
-    testImplementation(Libs.coroutinesTest)
-    testImplementation(Libs.extJunit)
-    testImplementation(Libs.hiltTesting)
-    kaptTest(Libs.hiltCompiler)
+    testImplementation(libs.junit)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.junit.ext)
+    testImplementation(libs.hilt.testing)
+    kaptTest(libs.hilt.compiler)
 
-    kaptAndroidTest(Libs.hiltCompiler)
-    implementation(Libs.hiltTesting)
-    implementation(Libs.espresso)
+    kaptAndroidTest(libs.hilt.compiler)
+    implementation(libs.hilt.testing)
+    implementation(libs.espresso)
 }

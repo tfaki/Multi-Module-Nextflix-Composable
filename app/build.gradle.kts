@@ -59,41 +59,40 @@ dependencies {
     implementation(project(":popular"))
 
     // Kotlin Coroutines
-    implementation(Libs.coroutineAndroid)
-    implementation(Libs.coroutineCore)
+    implementation(libs.coroutines.android)
+    implementation(libs.coroutines.core)
 
     // Hilt
-    implementation(Libs.hilt)
-    kapt(Libs.hiltCompiler)
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     // AndroidX
-    implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
-    implementation(Libs.lifecycle)
-    implementation(Libs.lifecycleViewmodel)
-    implementation(Libs.composeUi)
-    implementation(Libs.composeMaterial)
-    implementation(Libs.composeUiTooling)
-    implementation(Libs.materialIconsCore)
-    //implementation(Libs.materialIconsExtended)
-    implementation(Libs.runtimeLiveData)
-    implementation(Libs.activityCompose)
-    implementation(Libs.navigationCompose)
-    implementation(Libs.hiltNavigationCompose)
-    implementation(Libs.pagingCompose)
+    implementation(libs.android.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.lifecycle)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material)
+    implementation(libs.compose.ui.tooling)
+    implementation(libs.compose.material.icon.core)
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.activity)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.hilt.navigation)
+    implementation(libs.compose.paging)
 
     // Networking
-    implementation(Libs.retrofit)
-    implementation(Libs.converterGson)
-    implementation(Libs.converterScalars)
-    implementation(Libs.okhttpLogging)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.scalars)
+    implementation(libs.okhttp.logging)
 
     // Testing
-    testImplementation(Libs.junit)
-    testImplementation(Libs.hiltTesting)
-    implementation(Libs.extJunit)
-    implementation(Libs.espresso)
+    testImplementation(libs.junit)
+    testImplementation(libs.hilt.testing)
+    implementation(libs.junit.ext)
+    implementation(libs.espresso)
 
     // Google
-    implementation(Libs.material)
+    implementation(libs.material)
 }
