@@ -78,8 +78,19 @@ You should add api key to Network Module before build app.
 * Coil
 * Solid Principles
 
-## MAD (Modern Android Development) Scorecard
-![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/summary.png)
+## MAD Scorecard
+<table style="padding:10px">
+	<tr>
+		<td align="center">
+			<h2>Modern Android Development</h2>
+		</td>
+  	</tr>
+	<tr>
+    	<td align="center">
+			<img src="summary.png" alt="Modern Android Development" width="1000"/>
+    	</td>
+  	</tr>
+</table>
 
 ## TODOs
 
