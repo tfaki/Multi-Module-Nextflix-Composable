@@ -85,7 +85,7 @@ Then fork this repo, make it better and don't forgot give a STAR.
 ```xml
 MIT License
 
-Copyright (c) 2023 Talha Fakıoğlu
+Copyright (c) 2021 Talha Fakıoğlu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
