@@ -29,9 +29,31 @@ The modules are as follow:
 You should add api key to Network Module before build app.
 
 ## Screenshots
-![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/now_playing_screen.png)
-![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/popular_screen.png)
-![](https://github.com/TalhaFaki/Nextflix-Composable/blob/master/upcoming_screen.png)
+
+<table style="padding:10px">
+	<tr>
+		<td align="center">
+			<h2>Now Playing Screen</h2>
+		</td>
+		<td align="center">
+			<h2>Popular Screen</h2>
+		</td>
+  <td align="center">
+			<h2>Upcoming Screen</h2>
+		</td>
+  	</tr>
+	<tr>
+    	<td align="center">
+			<img src="now_playing_screen.png" alt="Now Playing Screen" width="300"/>
+    	</td>
+		<td align="center">
+			<img src="popular_screen.png" alt="Popular Screen" width="300"/>
+    	</td>
+  <td align="center">
+			<img src="upcoming_screen.png" alt="Upcoming Screen" width="300"/>
+    	</td>
+  	</tr>
+</table>
 
 ## Shimmer Effects
 <p>
