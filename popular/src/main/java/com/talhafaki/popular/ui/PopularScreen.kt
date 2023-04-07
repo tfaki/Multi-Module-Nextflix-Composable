@@ -1,4 +1,4 @@
-package com.talhafaki.popular
+package com.talhafaki.popular.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

@@ -1,4 +1,4 @@
-package com.talhafaki.popular
+package com.talhafaki.popular.data
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

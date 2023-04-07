@@ -1,8 +1,9 @@
-package com.talhafaki.popular
+package com.talhafaki.popular.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
+import com.talhafaki.popular.data.PopularRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

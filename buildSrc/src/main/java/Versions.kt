@@ -5,7 +5,7 @@
 object Versions {
     const val inject = "1"
     const val gradle = "7.0.4"
-    const val compilerExtension = "1.1.0-beta04"
+    const val compilerExtension = "1.4.4"
     const val coroutines = "1.6.4"
     const val hilt = "2.44"
     const val material = "1.6.0"
@@ -31,5 +31,5 @@ object Versions {
     const val lottieCompose = "4.2.2"
     const val sweetToast = "1.0.1"
     const val swipeRefresh = "0.21.0-beta"
-    const val kotlinGradle = "1.6.0"
+    const val kotlinGradle = "1.8.10"
 }

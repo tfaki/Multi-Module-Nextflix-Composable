@@ -1,4 +1,4 @@
-package com.talhafaki.upcoming
+package com.talhafaki.upcoming.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,6 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.talhafaki.common.items.MovieItem
 import com.talhafaki.common.loading.ShimmerAnimation
-import com.talhafaki.common.theme.NextflixComposableTheme
 import com.talhafaki.composablesweettoast.util.SweetToastUtil
 import com.talhafaki.domain.entity.NetworkMovie
 

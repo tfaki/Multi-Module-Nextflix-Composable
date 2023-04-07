@@ -1,8 +1,9 @@
-package com.talhafaki.upcoming
+package com.talhafaki.upcoming.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
+import com.talhafaki.upcoming.data.UpcomingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -11,7 +12,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class UpcomingViewModel @Inject constructor(
-    private val upcomingRepository: UpcomingRepository,
+    upcomingRepository: UpcomingRepository,
 ) : ViewModel() {
 
     val upcomingList = upcomingRepository.upcoming().cachedIn(viewModelScope)
