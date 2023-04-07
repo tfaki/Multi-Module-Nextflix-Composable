@@ -1,10 +1,9 @@
-package com.talhafaki.upcoming
+package com.talhafaki.upcoming.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.talhafaki.domain.entity.NetworkMovie
 import com.talhafaki.domain.usecase.UpcomingUseCase
-import java.lang.IllegalStateException
 import javax.inject.Inject
 
 /**

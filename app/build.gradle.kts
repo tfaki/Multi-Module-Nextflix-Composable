@@ -53,7 +53,7 @@ dependencies {
 
     implementation(project(":domain"))
     implementation(project(":data"))
-    implementation(project(":common"))
+    implementation(project(":common-ui"))
     implementation(project(":upcoming"))
     implementation(project(":nowplaying"))
     implementation(project(":popular"))

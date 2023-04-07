@@ -1,4 +1,4 @@
-package com.talhafaki.nowplaying
+package com.talhafaki.nowplaying.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

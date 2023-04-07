@@ -1,32 +1,32 @@
-package com.talhafaki.nowplaying
+package com.talhafaki.popular.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.talhafaki.domain.entity.NetworkMovie
-import com.talhafaki.domain.usecase.NowPlayingUseCase
-import java.lang.IllegalStateException
+import com.talhafaki.domain.usecase.PopularUseCase
+import retrofit2.HttpException
 import javax.inject.Inject
 
 /**
  * Created by tfakioglu on 12.December.2021
  */
-class NowPlayingDataSource @Inject constructor(private val nowPlayingUseCase: NowPlayingUseCase) :
+class PopularDataSource @Inject constructor(private val popularUseCase: PopularUseCase) :
     PagingSource<Int, NetworkMovie>() {
 
     override fun getRefreshKey(state: PagingState<Int, NetworkMovie>): Int? = state.anchorPosition
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NetworkMovie> {
-        try {
+        return try {
             val nextPage = params.key ?: 1
-            val movieResponse = nowPlayingUseCase(nextPage)
+            val response = popularUseCase(page = nextPage)
 
-            if (movieResponse.body()?.results.isNullOrEmpty()){
+            if (response.body()?.results.isNullOrEmpty()) {
                 return LoadResult.Error(throw Exception("Something went wrong"))
             }
 
-            val list = movieResponse.body()?.results ?: emptyList()
+            val list = response.body()?.results ?: emptyList()
 
-            return LoadResult.Page(
+            LoadResult.Page(
                 data = list,
                 prevKey =
                 if (nextPage == 1) null
@@ -35,6 +35,8 @@ class NowPlayingDataSource @Inject constructor(private val nowPlayingUseCase: No
             )
         } catch (t: Throwable) {
             return LoadResult.Error(t)
+        } catch (exception: HttpException) {
+            return LoadResult.Error(exception)
         }
     }
 }

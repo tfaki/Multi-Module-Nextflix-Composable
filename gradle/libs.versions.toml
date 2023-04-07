@@ -2,6 +2,7 @@
 
 coroutines = "1.6.4"
 hilt = "2.44"
+kotlinGradlePlugin = "1.8.0"
 ktx = "1.9.0"
 appcompat = "1.4.1"
 lifecycle = "2.5.1"
@@ -36,6 +37,7 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 android-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel" }
 compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
