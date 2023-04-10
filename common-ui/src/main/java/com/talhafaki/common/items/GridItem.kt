@@ -1,5 +1,6 @@
 package com.talhafaki.common.items
 
+import android.media.Rating
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -24,16 +25,20 @@ import com.talhafaki.common.theme.Typography
  */
 
 @Composable
-fun GridItem(posterPath: String, title: String, desc: String) {
+fun GridItem(posterPath: String, title: String, desc: String, rating: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .height(420.dp)
             .padding(8.dp)
-            .clip(RoundedCornerShape(6.dp))
+            .clip(RoundedCornerShape(8.dp))
             .background(color = MaterialTheme.colors.background)
     ) {
         Column(
             modifier = Modifier
+                .padding(horizontal = 6.dp)
+                .padding(top = 6.dp)
+                .clip(RoundedCornerShape(topEnd = 8.dp, topStart = 8.dp))
                 .fillMaxWidth()
         ) {
             ImageContainer(posterPath = posterPath)
@@ -41,26 +46,32 @@ fun GridItem(posterPath: String, title: String, desc: String) {
             Text(
                 text = title,
                 modifier = Modifier
-                    .fillMaxWidth(),
-                style = MaterialTheme.typography.body1.copy(
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                style = MaterialTheme.typography.h6.copy(
                     color = Color.White,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center
+                    fontWeight = FontWeight.Bold
                 ),
                 maxLines = 2
+            )
+
+            RatingBar(
+                rating = rating,
+                modifier = Modifier
+                    .padding(4.dp)
+                    .fillMaxWidth()
             )
 
             if (desc.isNotEmpty()) {
                 Text(
                     modifier = Modifier
-                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                        .padding(horizontal = 8.dp, vertical = 8.dp),
                     text = desc,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     style = Typography.body2.copy(color = Color.White)
                 )
             }
-            Spacer(Modifier.padding(8.dp))
         }
     }
 }
@@ -75,12 +86,11 @@ fun ImageContainer(posterPath: String) {
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(160.dp)
-                .padding(8.dp),
+                .height(250.dp),
             painter = rememberImagePainter(
                 data = posterPath
             ),
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.Crop,
             contentDescription = ""
         )
     }

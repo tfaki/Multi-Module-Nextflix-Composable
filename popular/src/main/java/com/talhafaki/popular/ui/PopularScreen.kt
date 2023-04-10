@@ -38,7 +38,8 @@ internal fun PopularScreen(movieList: LazyPagingItems<NetworkMovie>) {
                     GridItem(
                         posterPath = movie.posterUrl,
                         title = movie.title,
-                        desc = movie.overview
+                        desc = movie.overview,
+                        rating = movie.rating
                     )
                 }
             }

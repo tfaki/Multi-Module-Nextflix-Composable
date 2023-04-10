@@ -70,23 +70,10 @@ fun MovieItem(posterPath: String, title: String, desc: String, rating: String) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Color.Yellow,
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = rating,
-                        color = Color.Yellow,
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
+                RatingBar(
+                    rating = rating,
+                    modifier = Modifier.fillMaxWidth()
+                )
 
                 Text(
                     text = desc,
