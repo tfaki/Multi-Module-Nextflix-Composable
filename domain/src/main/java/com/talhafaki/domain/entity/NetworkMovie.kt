@@ -13,4 +13,6 @@ data class NetworkMovie(
     val voteAverage: Double?,
 ) {
     val posterUrl = Constants.POSTER_URL + posterPath
+
+    val rating = voteAverage?.toString() ?: "0.0"
 }
