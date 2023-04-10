@@ -25,15 +25,17 @@ fun ShimmerRowItem(brush: Brush) {
         ) {
             Spacer(
                 modifier = Modifier
-                    .size(100.dp)
+                    .height(200.dp)
+                    .width(120.dp)
                     .padding(start = 12.dp, top = 12.dp, end = 4.dp, bottom = 12.dp)
+                    .clip(RoundedCornerShape(8.dp))
                     .background(brush = brush)
             )
             Column {
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(30.dp)
+                        .height(40.dp)
                         .padding(start = 8.dp, top = 12.dp, end = 12.dp, bottom = 4.dp)
                         .background(brush = brush)
                 )
@@ -42,6 +44,15 @@ fun ShimmerRowItem(brush: Brush) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(30.dp)
+                        .padding(vertical = 8.dp)
+                        .padding(start = 8.dp, end = 12.dp)
+                        .background(brush = brush)
+                )
+
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
                         .padding(start = 8.dp, top = 8.dp, end = 12.dp, bottom = 8.dp)
                         .background(brush = brush)
                 )
