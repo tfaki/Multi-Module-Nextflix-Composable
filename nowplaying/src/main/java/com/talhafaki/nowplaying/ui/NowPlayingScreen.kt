@@ -33,7 +33,8 @@ fun NowPlayingScreen(movieList: LazyPagingItems<NetworkMovie>) {
                 MovieItem(
                     posterPath = movie.posterUrl,
                     title = movie.title,
-                    desc = movie.overview
+                    desc = movie.overview,
+                    rating = movie.rating
                 )
             }
         }
