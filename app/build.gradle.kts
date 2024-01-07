@@ -51,12 +51,12 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":common-ui"))
-    implementation(project(":upcoming"))
-    implementation(project(":nowplaying"))
-    implementation(project(":popular"))
+    implementation(projects.domain)
+    implementation(projects.data)
+    implementation(projects.commonUi)
+    implementation(projects.upcoming)
+    implementation(projects.nowplaying)
+    implementation(projects.popular)
 
     // Kotlin Coroutines
     implementation(libs.coroutines.android)
