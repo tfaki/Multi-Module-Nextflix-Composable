@@ -1,10 +1,17 @@
 package com.talhafaki.nextflixcomposable.ui.main
 
-import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -31,17 +38,15 @@ fun MainScreen() {
     SettingUpBottomNavigationBarAndCollapsing()
 }
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun SettingUpBottomNavigationBarAndCollapsing() {
-    val scaffoldState = rememberScaffoldState()
+    val snackbarHostState = remember { SnackbarHostState() }
     val navController = rememberNavController()
     Scaffold(modifier = Modifier,
-        scaffoldState = scaffoldState,
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
             BottomNavigationBar(
-                modifier = Modifier
-                    .height(56.dp),
+                modifier = Modifier,
                 navController
             )
         }
@@ -71,7 +76,7 @@ fun BottomNavigationBar(modifier: Modifier, navController: NavController) {
         NavigationItem.Popular,
         NavigationItem.Upcoming
     )
-    BottomNavigation(
+    NavigationBar(
         modifier
             .graphicsLayer {
                 shape = RoundedCornerShape(
@@ -80,17 +85,22 @@ fun BottomNavigationBar(modifier: Modifier, navController: NavController) {
                 )
                 clip = true
             },
-        backgroundColor = colorResource(id = R.color.black),
+        containerColor = colorResource(id = R.color.black),
         contentColor = Color.White
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         bottomNavigationItems.forEach { item ->
-            BottomNavigationItem(
+            NavigationBarItem(
                 icon = { Icon(painterResource(id = item.icon), contentDescription = item.route) },
+                colors = androidx.compose.material3.NavigationBarItemDefaults.colors(
+                    selectedIconColor = SpeechRed,
+                    selectedTextColor = SpeechRed,
+                    indicatorColor = Color.Transparent,
+                    unselectedIconColor = Color.White.copy(0.4f),
+                    unselectedTextColor = Color.White.copy(0.4f),
+                ),
                 label = { Text(text = item.route) },
-                selectedContentColor = SpeechRed,
-                unselectedContentColor = Color.White.copy(0.4f),
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
                 onClick = {

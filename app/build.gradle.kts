@@ -93,6 +93,4 @@ dependencies {
     implementation(libs.junit.ext)
     implementation(libs.espresso)
 
-    // Google
-    implementation(libs.material)
 }
