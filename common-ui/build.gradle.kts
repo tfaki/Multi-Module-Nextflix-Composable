@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
+    implementation(projects.domain)
 
     implementation(libs.compose.ui)
     implementation(libs.compose.material)

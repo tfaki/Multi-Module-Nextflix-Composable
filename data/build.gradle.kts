@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
+    implementation(projects.domain)
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
     implementation(libs.inject)
