@@ -5,7 +5,7 @@
 object Versions {
     const val inject = "1"
     const val gradle = "7.0.4"
-    const val compilerExtension = "1.4.4"
+    const val compilerExtension = "1.5.7"
     const val coroutines = "1.6.4"
     const val hilt = "2.44"
     const val material = "1.6.0"
