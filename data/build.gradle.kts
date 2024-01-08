@@ -24,17 +24,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     // Build fails after adding the test coroutines dependency
     // https://github.com/Kotlin/kotlinx.coroutines/issues/2023
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
+    namespace = "com.talhafaki.data"
 }
 
 dependencies {
