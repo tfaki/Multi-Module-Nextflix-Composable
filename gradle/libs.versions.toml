@@ -1,5 +1,10 @@
 [versions]
 
+minSdk = "24"
+targetSdk = "34"
+compileSdk = "34"
+androidxComposeCompiler = "1.5.7"
+
 coroutines = "1.7.3"
 hilt = "2.50"
 ktx = "1.12.0"
@@ -24,6 +29,7 @@ swipe-refresh = "0.21.0-beta"
 gradle = "8.2.1"
 kotlin-gradle = "1.9.21"
 ksp = "1.9.21-1.0.16"
+org-jetbrains-kotlin-jvm = "1.9.21"
 
 [libraries]
 
@@ -59,8 +65,8 @@ inject = { group = "javax.inject", name = "javax.inject", version.ref = "inject"
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 sweet-toast = { group = "com.github.TalhaFaki", name = "ComposableSweetToast", version.ref = "sweet-toast" }
 swipe-refresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "swipe-refresh" }
-#build-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
-#kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradle" }
+build-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradle" }
 #hilt-gradle-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
 
 [plugins]
@@ -69,6 +75,10 @@ android-library = { id = "com.android.library", version.ref = "gradle" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-gradle" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 
-
+# Plugins defined by this project
+nextflix-application = { id = "nextflix.application", version = "unspecified" }
+nextflix-hilt = { id = "nextflix.hilt",version = "unspecified"}
+nextflix-kotlin-android = { id = "nextflix.kotlin.android",version = "unspecified"}
 

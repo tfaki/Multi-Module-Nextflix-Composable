@@ -1,17 +1,12 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.nextflix.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
+    alias(libs.plugins.nextflix.hilt)
 }
 
 android {
-    compileSdk = Config.compileSdkVersion
-
     defaultConfig {
         applicationId = "com.talhafaki.nextflixcomposable"
-        minSdk = Config.minSdkVersion
-        targetSdk = Config.targetSdkVersion
         versionCode = 1
         versionName = "1.0.0"
 
@@ -21,28 +16,11 @@ android {
         }
     }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compilerExtension
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packagingOptions {
         resources.excludes.add("META-INF/*")
@@ -63,17 +41,12 @@ dependencies {
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
 
-    // Hilt
-    implementation(libs.hilt)
-    ksp(libs.hilt.compiler)
-
     // AndroidX
     implementation(libs.android.ktx)
     implementation(libs.appcompat)
     implementation(libs.lifecycle)
     implementation(libs.lifecycle.viewmodel)
 
-    implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.material)
     implementation(libs.compose.ui.tooling)
