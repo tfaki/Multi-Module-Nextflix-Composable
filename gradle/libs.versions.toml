@@ -81,4 +81,4 @@ org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org
 nextflix-application = { id = "nextflix.application", version = "unspecified" }
 nextflix-hilt = { id = "nextflix.hilt",version = "unspecified"}
 nextflix-kotlin-android = { id = "nextflix.kotlin.android",version = "unspecified"}
-
+nextflix-library = { id = "nextflix.library",version = "unspecified"}

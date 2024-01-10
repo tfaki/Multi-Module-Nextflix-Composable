@@ -33,5 +33,9 @@ gradlePlugin {
             id = "nextflix.kotlin.android"
             implementationClass = "plugins.AndroidKotlinConventionPlugin"
         }
+        register("androidLibrary"){
+            id = "nextflix.library"
+            implementationClass = "plugins.AndroidLibraryComposeConventionPlugin"
+        }
     }
 }

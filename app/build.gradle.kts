@@ -15,13 +15,6 @@ android {
             useSupportLibrary = true
         }
     }
-
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.7"
-    }
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }

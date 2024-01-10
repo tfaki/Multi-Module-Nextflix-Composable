@@ -1,21 +1,14 @@
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.nextflix.library)
     alias(libs.plugins.nextflix.hilt)
     alias(libs.plugins.nextflix.kotlin.android)
 }
 
 android {
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.7"
-    }
     namespace = "com.talhafaki.nowplaying"
 }
 
 dependencies {
-
     implementation(projects.domain)
     implementation(projects.commonUi)
 
