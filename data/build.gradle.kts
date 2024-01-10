@@ -1,37 +1,10 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    id("org.jetbrains.kotlin.kapt")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.nextflix.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
-    compileSdk = Config.compileSdkVersion
-
-    defaultConfig {
-        minSdk = Config.minSdkVersion
-        targetSdk = Config.targetSdkVersion
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-    // Build fails after adding the test coroutines dependency
-    // https://github.com/Kotlin/kotlinx.coroutines/issues/2023
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
@@ -55,9 +28,9 @@ dependencies {
     testImplementation(libs.coroutines.test)
     testImplementation(libs.junit.ext)
     testImplementation(libs.hilt.testing)
-    kaptTest(libs.hilt.compiler)
+    kspTest(libs.hilt.compiler)
 
-    kaptAndroidTest(libs.hilt.compiler)
+    kspAndroidTest(libs.hilt.compiler)
     implementation(libs.hilt.testing)
     implementation(libs.espresso)
 }

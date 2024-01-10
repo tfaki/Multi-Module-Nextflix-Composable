@@ -1,15 +1,17 @@
 [versions]
 
+minSdk = "24"
+targetSdk = "34"
+compileSdk = "34"
+androidxComposeCompiler = "1.5.7"
+
 coroutines = "1.7.3"
 hilt = "2.50"
-kotlinGradlePlugin = "1.8.0"
 ktx = "1.12.0"
 appcompat = "1.6.1"
 lifecycle = "2.6.2"
 lifecycle-viewmodel = "2.6.2"
-compose = "1.5.4"
-compose-material = "1.1.2"
-material-icon-core = "1.5.4"
+compose-bom = "2023.10.01"
 compose-activity = "1.8.2"
 compose-navigation = "2.7.6"
 compose-hilt-navigation = "1.1.0"
@@ -26,27 +28,26 @@ sweet-toast = "1.0.1"
 swipe-refresh = "0.21.0-beta"
 gradle = "8.2.1"
 kotlin-gradle = "1.9.21"
+ksp = "1.9.21-1.0.16"
+org-jetbrains-kotlin-jvm = "1.9.21"
 
 [libraries]
 
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
-kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradle" }
-hilt-gradle = {group = "com.google.dagger",name = "hilt-android-gradle-plugin",version.ref = "hilt"}
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 android-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel" }
-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
-compose-material = {group = "androidx.compose.material3", name = "material3", version.ref = "compose-material" }
-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
-compose-material-icon-core = { group = "androidx.compose.material", name = "material-icons-core", version.ref = "material-icon-core" }
-compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui"}
+compose-material = {group = "androidx.compose.material3", name = "material3"}
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling"}
+compose-material-icon-core = { group = "androidx.compose.material", name = "material-icons-core"}
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata"}
 compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "compose-navigation" }
 compose-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "compose-hilt-navigation" }
@@ -64,12 +65,20 @@ inject = { group = "javax.inject", name = "javax.inject", version.ref = "inject"
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 sweet-toast = { group = "com.github.TalhaFaki", name = "ComposableSweetToast", version.ref = "sweet-toast" }
 swipe-refresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "swipe-refresh" }
-#build-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
-#kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradle" }
+build-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradle" }
 #hilt-gradle-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "hilt" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle" }
+android-library = { id = "com.android.library", version.ref = "gradle" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-gradle" }
-hilt = { id = "com.google.dagger", version.ref = "hilt" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 
+# Plugins defined by this project
+nextflix-application = { id = "nextflix.application", version = "unspecified" }
+nextflix-hilt = { id = "nextflix.hilt",version = "unspecified"}
+nextflix-kotlin-android = { id = "nextflix.kotlin.android",version = "unspecified"}
+nextflix-library = { id = "nextflix.library",version = "unspecified"}
