@@ -42,7 +42,8 @@ fun MovieItem(posterPath: String, title: String, desc: String, rating: String) {
             Image(
                 modifier = Modifier
                     .padding(8.dp)
-                    .height(200.dp)
+                    .fillMaxHeight()
+                    .aspectRatio(0.7f)
                     .clip(RoundedCornerShape(8.dp)),
                 painter = rememberImagePainter(
                     data = posterPath
