@@ -4,8 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -31,7 +31,6 @@ fun GridItem(posterPath: String, title: String, desc: String, rating: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(420.dp)
             .padding(8.dp)
             .clip(RoundedCornerShape(8.dp))
             .background(color = MaterialTheme.colorScheme.background)
@@ -89,7 +88,7 @@ fun ImageContainer(posterPath: String) {
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(250.dp),
+                .aspectRatio(0.7f),
             painter = rememberImagePainter(
                 data = posterPath
             ),
