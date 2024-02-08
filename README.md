@@ -102,9 +102,9 @@ You should add api key to Network Module before build app.
 * Favorite Icon
 
 ## Screens
-* [Click here for Now Playing Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/nowplaying/src/main/java/com/talhafaki/nowplaying/NowPlayingScreen.kt)
-* [Click here for Popular Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/popular/src/main/java/com/talhafaki/popular/PopularScreen.kt)
-* [Click here for Upcoming Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/master/upcoming/src/main/java/com/talhafaki/upcoming/UpcomingScreen.kt)
+* [Click here for Now Playing Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/main/nowplaying/src/main/java/com/talhafaki/nowplaying/ui/NowPlayingScreen.kt)
+* [Click here for Popular Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/main/popular/src/main/java/com/talhafaki/popular/ui/PopularScreen.kt)
+* [Click here for Upcoming Screen](https://github.com/TalhaFaki/Multi-Module-Nextflix-Composable/blob/main/upcoming/src/main/java/com/talhafaki/upcoming/ui/UpcomingScreen.kt)
 
 ## Follow me here:
 https://linktr.ee/talhafaki
