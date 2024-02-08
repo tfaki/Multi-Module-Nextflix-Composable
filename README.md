@@ -113,7 +113,7 @@ https://linktr.ee/talhafaki
 Don't forget give a star.
 
 ## Didn't you?
-Then fork this repo, make it better and don't forgot give a STAR.
+Then fork this repo, make it better and don't forget give a STAR.
 
 ```xml
 MIT License
