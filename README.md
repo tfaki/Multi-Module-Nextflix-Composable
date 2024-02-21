@@ -44,21 +44,21 @@ You should add api key to Network Module before build app.
   	</tr>
 	<tr>
     	<td align="center">
-			<img src="now_playing_screen.png" alt="Now Playing Screen" width="300"/>
+			<img src="assets/now_playing_screen.png" alt="Now Playing Screen" width="300"/>
     	</td>
 		<td align="center">
-			<img src="popular_screen.png" alt="Popular Screen" width="300"/>
+			<img src="assets/popular_screen.png" alt="Popular Screen" width="300"/>
     	</td>
   <td align="center">
-			<img src="upcoming_screen.png" alt="Upcoming Screen" width="300"/>
+			<img src="assets/upcoming_screen.png" alt="Upcoming Screen" width="300"/>
     	</td>
   	</tr>
 </table>
 
 ## Shimmer Effects
 <p>
- <img align="left" src="grid_shimmer.gif" width="300" height="550"/>
- <img align="center" src="row_shimmer.gif" width="300" height="550"/>
+ <img align="left" src="assets/grid_shimmer.gif" width="300" height="550"/>
+ <img align="center" src="assets/row_shimmer.gif" width="300" height="550"/>
 </p>
 
 
@@ -87,7 +87,7 @@ You should add api key to Network Module before build app.
   	</tr>
 	<tr>
     	<td align="center">
-			<img src="summary.png" alt="Modern Android Development" width="1000"/>
+			<img src="assets/summary.png" alt="Modern Android Development" width="1000"/>
     	</td>
   	</tr>
 </table>
