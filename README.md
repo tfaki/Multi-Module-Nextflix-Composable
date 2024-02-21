@@ -27,6 +27,7 @@ The modules are as follow:
 
 ## --- Requirement ---
 You should add api key to Network Module before build app.
+https://developer.themoviedb.org/reference/intro/authentication
 
 ## Screenshots
 
