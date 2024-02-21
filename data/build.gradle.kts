@@ -25,9 +25,10 @@ dependencies {
 
     // Testing
     testImplementation(libs.junit)
-    testImplementation(libs.coroutines.test)
+    testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.junit.ext)
     testImplementation(libs.hilt.testing)
+    testImplementation(libs.mockwebserver)
     kspTest(libs.hilt.compiler)
 
     kspAndroidTest(libs.hilt.compiler)
