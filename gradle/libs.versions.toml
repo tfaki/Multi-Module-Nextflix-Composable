@@ -5,6 +5,7 @@ minSdk = "24"
 mockitoInline = "5.2.0"
 mockitoCore = "5.10.0"
 mockitoKotlin = "5.2.1"
+mockwebserver = "4.9.1"
 targetSdk = "34"
 compileSdk = "34"
 androidxComposeCompiler = "1.5.7"
@@ -62,6 +63,7 @@ compose-lottie = { group = "com.airbnb.android", name = "lottie-compose", versio
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserver" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit" }
