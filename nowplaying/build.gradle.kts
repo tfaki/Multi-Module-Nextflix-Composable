@@ -28,4 +28,11 @@ dependencies {
     implementation(libs.compose.lottie)
 
     implementation(libs.retrofit)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(projects.dataTest)
 }
