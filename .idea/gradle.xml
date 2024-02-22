@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -25,6 +26,7 @@
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/common-ui" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data-test" />
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/nowplaying" />
             <option value="$PROJECT_DIR$/popular" />

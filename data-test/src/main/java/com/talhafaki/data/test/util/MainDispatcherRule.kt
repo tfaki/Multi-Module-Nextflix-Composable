@@ -1,4 +1,4 @@
-package com.talhafaki.data.util
+package com.talhafaki.data.test.util
 
 import org.junit.rules.TestWatcher
 
