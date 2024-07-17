@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.talhafaki.common.theme.Typography
 
@@ -89,8 +90,8 @@ fun ImageContainer(posterPath: String) {
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(0.7f),
-            painter = rememberImagePainter(
-                data = posterPath
+            painter = rememberAsyncImagePainter(
+                model = posterPath
             ),
             contentScale = ContentScale.Crop,
             contentDescription = ""

@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.talhafaki.common.theme.Typography
 
@@ -45,8 +46,8 @@ fun MovieItem(posterPath: String, title: String, desc: String, rating: String) {
                     .fillMaxHeight()
                     .aspectRatio(0.7f)
                     .clip(RoundedCornerShape(8.dp)),
-                painter = rememberImagePainter(
-                    data = posterPath
+                painter = rememberAsyncImagePainter(
+                    model = posterPath
                 ),
                 contentScale = ContentScale.Crop,
                 contentDescription = ""
